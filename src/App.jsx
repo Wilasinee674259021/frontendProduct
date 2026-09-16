@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Package, Pencil, Trash2, PlusCircle } from "lucide-react";
 
 function App() {
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = `${import.meta.env.VITE_API_URL}/products`;
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -11,6 +11,7 @@ function App() {
   const [price, setPrice] = useState(0);
   const [editingId, setEditingId] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+
   const fetchProduct = async () => {
     setLoading(true);
     setError("");
@@ -25,8 +26,8 @@ function App() {
       setLoading(false);
     }
   };
+
   useEffect(() => {
-    //fetch data from API
     fetchProduct();
   }, []);
 
@@ -291,4 +292,5 @@ function App() {
     </main>
   );
 }
+
 export default App;
