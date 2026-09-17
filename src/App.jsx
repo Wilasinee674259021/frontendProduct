@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Package, Pencil, Trash2, PlusCircle } from "lucide-react";
 
 function App() {
-  const API_URL = `${import.meta.env.VITE_API_URL}/products`;
+  const API_URL = `${import.meta.env.VITE_API_URL}/api/products`;
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
